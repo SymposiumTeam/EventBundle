@@ -1,0 +1,40 @@
+{
+    "name": "symposium/event-bundle",
+    "type": "symfony-bundle",
+    "description": "Symfony EventBundle",
+    "keywords": ["Event application", "json"],
+    "license": "GPL-3.0+",
+    "authors": [
+    	{
+    	    "name": "Gabriel Bondaz",
+    	    "email": "gabriel.bondaz@idci-consulting.fr",
+    	    "homepage": "http://www.idci-consulting.fr"
+    	},
+    	{
+            "name": "Baptiste Bouchereau",
+            "email": "baptiste.bouchereau@idci-consulting.fr",
+            "homepage": "http://www.idci-consulting.fr"
+        },
+    	{
+    	    "name": "Quentin Curtet",
+    	    "email": "quentin.curtet.pro@gmail.com",
+    	    "homepage": "http://www.idci-consulting.fr"
+    	},
+    	{
+    	    "name": "Brahim Boukoufallah",
+    	    "email": "brahim.boukoufallah@idci-consulting.fr",
+    	    "homepage": "http://www.idci-consulting.fr"
+    	},
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "symfony/framework-bundle":         ">=2.3",
+        "twig/twig":                        "*",
+        "doctrine/doctrine-bundle":         "*"
+    },
+    "autoload": {
+        "psr-2": { "Symposium\\Bundle\\EventBundle": "" }
+    },
+    "target-dir": "Symposium/Bundle/EventBundle",
+    "minimum-stability": "dev"
+}
