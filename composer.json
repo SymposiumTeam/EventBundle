@@ -28,9 +28,9 @@
     ],
     "require": {
         "php": ">=5.3.3",
-        "symfony/framework-bundle":         ">=2.3",
-        "twig/twig":                        "*",
-        "doctrine/doctrine-bundle":         "*"
+        "symfony/framework-bundle":">=2.3",
+        "twig/twig":"*",
+        "doctrine/doctrine-bundle":"*"
     },
     "autoload": {
         "psr-2": { "Symposium\\Bundle\\EventBundle": "" }
