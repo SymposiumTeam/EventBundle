@@ -33,8 +33,7 @@
         "doctrine/doctrine-bundle":"*"
     },
     "autoload": {
-        "psr-4": { "Symposium\\Bundle\\EventBundle": "Symposium/Bundle/EventBundle" }
+        "psr-4": { "Symposium\\Bundle\\EventBundle\\": "" }
     },
-    "target-dir": "Symposium/Bundle/EventBundle",
     "minimum-stability": "dev"
 }
