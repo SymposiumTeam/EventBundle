@@ -24,7 +24,7 @@
     	    "name": "Brahim Boukoufallah",
     	    "email": "brahim.boukoufallah@idci-consulting.fr",
     	    "homepage": "http://www.idci-consulting.fr"
-    	},
+    	}
     ],
     "require": {
         "php": ">=5.3.3",
