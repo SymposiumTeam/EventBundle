@@ -7,5 +7,5 @@ namespace Symposium\Bundle\EventBundle\Entity;
  */
 interface EventInterface
 {
-    //Implémenter les méthodes
+    //Implement methods
 }
