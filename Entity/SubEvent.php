@@ -5,12 +5,12 @@ namespace Symposium\Bundle\EventBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Event
+ * SubEvent
  *
  * @ORM\Table()
  * @ORM\Entity
  */
-class Event extends AbstractEvent
+class SubEvent extends AbstractEvent
 {
     /**
      * @var integer
