@@ -13,6 +13,12 @@ use Doctrine\ORM\Mapping as ORM;
 class FinancialTransaction
 {
     /**
+     * @ORM\OneToMany(targetEntity="Registration", mappedBy="financialTransaction")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    protected $registrations;
+
+    /**
      * @var integer
      *
      * @ORM\Column(name="id", type="integer")
