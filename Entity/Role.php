@@ -11,13 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity
  */
 class Role
-{  
-    /**
-    * @ORM\OneToMany(targetEntity="Registration", mappedBy="role")
-    * @ORM\JoinColumn(nullable=false)
-    */
-    protected $registrations;
-    
+{     
     /**
      * @var integer
      *

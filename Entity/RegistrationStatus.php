@@ -11,13 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity
  */
 class RegistrationStatus
-{   
-    /**
-     * @ORM\OneToMany(targetEntity="Registration", mappedBy="registrationStatus")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    protected $registrations;
-    
+{      
     /**
      * @var integer
      *

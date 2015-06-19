@@ -6,8 +6,6 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * SubEvent
- *
- * @ORM\Table()
  * @ORM\Entity
  */
 class SubEvent extends AbstractEvent
