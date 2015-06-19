@@ -19,61 +19,67 @@ class Location
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=255)
      */
-    private $name;
+    protected $name;
 
     /**
      * @var string
      *
      * @ORM\Column(name="description", type="text")
      */
-    private $description;
+    protected $description;
 
     /**
      * @var float
      *
      * @ORM\Column(name="latitude", type="float")
      */
-    private $latitude;
+    protected $latitude;
 
     /**
      * @var float
      *
      * @ORM\Column(name="longitude", type="float")
      */
-    private $longitude;
+    protected $longitude;
 
     /**
      * @var string
      *
      * @ORM\Column(name="address", type="string", length=255)
      */
-    private $address;
+    protected $address;
 
     /**
      * @var string
      *
      * @ORM\Column(name="zip_code", type="string", length=255)
      */
-    private $zipCode;
+    protected $zipCode;
 
     /**
      * @var string
      *
      * @ORM\Column(name="city", type="string", length=255)
      */
-    private $city;
+    protected $city;
 
     /**
      * @var string
      *
      * @ORM\Column(name="country", type="string", length=255)
      */
-    private $country;
+    protected $country;
+
+    /**
+     * @ORM\OneToMany(targetEntity="AbstractEvent", mappedBy="location")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    protected $abstractEvents;
 }

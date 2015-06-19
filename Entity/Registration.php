@@ -19,19 +19,37 @@ class Registration
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="created_at", type="datetime")
      */
-    private $createdAt;
+    protected $createdAt;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="updated_at", type="datetime")
      */
-    private $updatedAt;
+    protected $updatedAt;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="RegistrationStatus", inversedBy="registrations")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    protected $registrationStatus;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Role", inversedBy="registrations")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    protected $role;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="FinancialTransaction", inversedBy="registrations")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    protected $financialTransaction;
 }

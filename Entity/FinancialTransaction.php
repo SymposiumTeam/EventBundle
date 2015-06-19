@@ -19,40 +19,46 @@ class FinancialTransaction
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var integer
      *
      * @ORM\Column(name="value", type="integer")
      */
-    private $value;
+    protected $value;
 
     /**
      * @var string
      *
      * @ORM\Column(name="method", type="string", length=255)
      */
-    private $method;
+    protected $method;
 
     /**
      * @var string
      *
      * @ORM\Column(name="currency_code", type="string", length=255)
      */
-    private $currencyCode;
+    protected $currencyCode;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="created_at", type="datetime")
      */
-    private $createdAt;
+    protected $createdAt;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="updated_at", type="datetime")
      */
-    private $updatedAt;
+    protected $updatedAt;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Registration", mappedBy="financialTransaction")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    protected $registrations;
 }

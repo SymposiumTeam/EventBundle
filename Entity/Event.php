@@ -12,12 +12,9 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Event extends AbstractEvent
 {
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
+	/**
+     * @ORM\OneToMany(targetEntity="AbstractEvent", mappedBy="event")
+     * @ORM\JoinColumn(nullable=false)
      */
-    private $id;
+    protected $abstractEvents;
 }

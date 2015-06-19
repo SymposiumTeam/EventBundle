@@ -19,103 +19,115 @@ class Recur
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
      *
      * @ORM\Column(name="frequence", type="string", length=255)
      */
-    private $frequence;
+    protected $frequence;
 
     /**
      * @var integer
      *
      * @ORM\Column(name="count", type="integer")
      */
-    private $count;
+    protected $count;
 
     /**
      * @var integer
      *
      * @ORM\Column(name="intervalValue", type="integer")
      */
-    private $intervalValue;
+    protected $intervalValue;
 
     /**
      * @var array
      *
      * @ORM\Column(name="by_second", type="simple_array")
      */
-    private $bySecond;
+    protected $bySecond;
 
     /**
      * @var array
      *
      * @ORM\Column(name="by_minute", type="simple_array")
      */
-    private $byMinute;
+    protected $byMinute;
 
     /**
      * @var array
      *
      * @ORM\Column(name="by_hour", type="simple_array")
      */
-    private $byHour;
+    protected $byHour;
 
     /**
      * @var array
      *
      * @ORM\Column(name="by_day", type="simple_array")
      */
-    private $byDay;
+    protected $byDay;
 
     /**
      * @var array
      *
      * @ORM\Column(name="by_month_day", type="simple_array")
      */
-    private $byMonthDay;
+    protected $byMonthDay;
 
     /**
      * @var array
      *
      * @ORM\Column(name="by_year_day", type="simple_array")
      */
-    private $byYearDay;
+    protected $byYearDay;
 
     /**
      * @var array
      *
      * @ORM\Column(name="by_week_no", type="simple_array")
      */
-    private $byWeekNo;
+    protected $byWeekNo;
 
     /**
      * @var array
      *
      * @ORM\Column(name="by_month", type="simple_array")
      */
-    private $byMonth;
+    protected $byMonth;
 
     /**
      * @var string
      *
      * @ORM\Column(name="wkst", type="string", length=255)
      */
-    private $wkst;
+    protected $wkst;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="created_at", type="datetime")
      */
-    private $createdAt;
+    protected $createdAt;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="updated_at", type="datetime")
      */
-    private $updatedAt;
+    protected $updatedAt;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="AbstractEvent", mappedBy="exceptionRule")
+     * @ORM\JoinColumn(nullable=false)
+     **/
+    protected $abstractEventsWithExceptionRule;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="AbstractEvent", mappedBy="recurenceRule")
+     * @ORM\JoinColumn(nullable=false)
+     **/
+    protected $abstractEventsWithRecurenceRule;
 }

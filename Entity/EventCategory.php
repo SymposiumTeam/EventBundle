@@ -19,40 +19,46 @@ class EventCategory
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=255)
      */
-    private $name;
+    protected $name;
 
     /**
      * @var string
      *
      * @ORM\Column(name="description", type="text")
      */
-    private $description;
+    protected $description;
 
     /**
      * @var integer
      *
      * @ORM\Column(name="right_border", type="integer")
      */
-    private $rightBorder;
+    protected $rightBorder;
 
     /**
      * @var integer
      *
      * @ORM\Column(name="left_border", type="integer")
      */
-    private $leftBorder;
+    protected $leftBorder;
 
     /**
      * @var integer
      *
      * @ORM\Column(name="parent_id", type="integer")
      */
-    private $parentId;
+    protected $parentId;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="AbstractEvent", mappedBy="eventCategory")
+     * @ORM\JoinColumn(nullable=false)
+     **/
+    protected $abstractEvents;
 }
