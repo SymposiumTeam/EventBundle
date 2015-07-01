@@ -1,0 +1,13 @@
+services:
+    attendee.attendee.form.type:
+        class: Symposium\EventBundle\Form\AttendeeFormType
+        tags:
+            - { name: form.type, alias: attendee_registration }
+    organizer.organizer.form.type:
+        class: Symposium\EventBundle\Form\OrganizerFormType
+        tags:
+            - { name: form.type, alias: organizer_registration }
+    twig.extension.intl:
+        class: Twig_Extensions_Extension_Intl
+        tags:
+            - { name: twig.extension }
