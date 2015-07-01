@@ -1,0 +1,67 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Recur list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Frequency</th>
+                <th>Count</th>
+                <th>Intervalvalue</th>
+                <th>Bysecond</th>
+                <th>Byminute</th>
+                <th>Byhour</th>
+                <th>Byday</th>
+                <th>Bymonthday</th>
+                <th>Byyearday</th>
+                <th>Byweekno</th>
+                <th>Bymonth</th>
+                <th>Wkst</th>
+                <th>Createdat</th>
+                <th>Updatedat</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('recur_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.frequency }}</td>
+                <td>{{ entity.count }}</td>
+                <td>{{ entity.intervalValue }}</td>
+                <td>{{ entity.bySecond }}</td>
+                <td>{{ entity.byMinute }}</td>
+                <td>{{ entity.byHour }}</td>
+                <td>{{ entity.byDay }}</td>
+                <td>{{ entity.byMonthDay }}</td>
+                <td>{{ entity.byYearDay }}</td>
+                <td>{{ entity.byWeekNo }}</td>
+                <td>{{ entity.byMonth }}</td>
+                <td>{{ entity.wkst }}</td>
+                <td>{% if entity.createdAt %}{{ entity.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if entity.updatedAt %}{{ entity.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('recur_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('recur_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('recur_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

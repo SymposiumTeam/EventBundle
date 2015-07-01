@@ -1,0 +1,84 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Recur</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Frequence</th>
+                <td>{{ entity.frequency }}</td>
+            </tr>
+            <tr>
+                <th>Count</th>
+                <td>{{ entity.count }}</td>
+            </tr>
+            <tr>
+                <th>Intervalvalue</th>
+                <td>{{ entity.intervalValue }}</td>
+            </tr>
+            <tr>
+                <th>Bysecond</th>
+                <td>{{ entity.bySecond }}</td>
+            </tr>
+            <tr>
+                <th>Byminute</th>
+                <td>{{ entity.byMinute }}</td>
+            </tr>
+            <tr>
+                <th>Byhour</th>
+                <td>{{ entity.byHour }}</td>
+            </tr>
+            <tr>
+                <th>Byday</th>
+                <td>{{ entity.byDay }}</td>
+            </tr>
+            <tr>
+                <th>Bymonthday</th>
+                <td>{{ entity.byMonthDay }}</td>
+            </tr>
+            <tr>
+                <th>Byyearday</th>
+                <td>{{ entity.byYearDay }}</td>
+            </tr>
+            <tr>
+                <th>Byweekno</th>
+                <td>{{ entity.byWeekNo }}</td>
+            </tr>
+            <tr>
+                <th>Bymonth</th>
+                <td>{{ entity.byMonth }}</td>
+            </tr>
+            <tr>
+                <th>Wkst</th>
+                <td>{{ entity.wkst }}</td>
+            </tr>
+            <tr>
+                <th>Createdat</th>
+                <td>{{ entity.createdAt|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Updatedat</th>
+                <td>{{ entity.updatedAt|date('Y-m-d H:i:s') }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('recur') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('recur_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}
